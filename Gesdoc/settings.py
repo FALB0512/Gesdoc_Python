@@ -138,15 +138,21 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'farudlopez36@gmail.com'
 EMAIL_HOST_PASSWORD = 'zmrn nwqv uyis fgtm'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfile')
+import os
+
+# Rutas para archivos estáticos
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_TMP = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
+# Crear directorios si no existen
 os.makedirs(STATIC_TMP, exist_ok=True)
 os.makedirs(STATIC_ROOT, exist_ok=True)
 
-STATTICFILES_DIRS =(
-    os.path.join(BASE_DIR, 'static',)
+# Directorios estáticos adicionales
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
 )
 
+# Configuración de almacenamiento de archivos estáticos
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
