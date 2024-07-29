@@ -1,1 +1,1 @@
-web: gunicorn Gesdoc_Sena.wsgi --log-file -
+web: gunicorn gesdoc.wsgi --log-file -
