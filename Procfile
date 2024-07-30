@@ -1,4 +1,5 @@
-web: gunicorn Modulos.Gesdoc_Sena.wsgi --log-file -
+web: gunicorn modulos.Gesdoc_Sena.wsgi:application
+
 
 
 
