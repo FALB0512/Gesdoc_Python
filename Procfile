@@ -1,2 +1,4 @@
-web: gunicorn gesdoc.wsgi
+web: gunicorn Gesdoc.wsgi --log-file -
+
+
 
