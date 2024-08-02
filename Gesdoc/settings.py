@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-8s5w3(ubmt%(v#=66f&sw-b14j0#)&2ijyv9mg2&j!0g!r&19$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [ ]
 
 # MEDIA settings
 MEDIA_URL = '/pdfs/'
@@ -53,7 +53,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'Gesdoc.urls'
@@ -138,21 +137,3 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'farudlopez36@gmail.com'
 EMAIL_HOST_PASSWORD = 'zmrn nwqv uyis fgtm'
 
-import os
-
-# Rutas para archivos estáticos
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_TMP = os.path.join(BASE_DIR, 'static')
-STATIC_URL = '/static/'
-
-# Crear directorios si no existen
-os.makedirs(STATIC_TMP, exist_ok=True)
-os.makedirs(STATIC_ROOT, exist_ok=True)
-
-# Directorios estáticos adicionales
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
-
-# Configuración de almacenamiento de archivos estáticos
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
