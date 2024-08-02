@@ -143,3 +143,4 @@ class OtrosRadicados(models.Model):
     class Meta:
         verbose_name = 'Otro radicado'
         verbose_name_plural = 'Otros radicados'
+        #hacer commit
